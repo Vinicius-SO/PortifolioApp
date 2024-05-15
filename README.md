@@ -1,19 +1,63 @@
-# Next.js + Tailwind CSS Example
+```markdown
+## Meu Portfólio
 
-Tailwind CSS is integrated into the `create-next-app` CLI, which supports TypeScript and JavaScript, as well as the App Router (`app/`) and the pages directory `pages/`.
+Este é o meu portfólio pessoal, construído com Next.js 14 e Tailwind CSS. Aqui, apresento meus projetos, habilidades e experiências.
 
-## How to use
+**[Visualizar Demonstração](https://gemini.google.com/79fcf7ed-5f3e-4ec1-a51c-0d7acefed716)**
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap a project preconfigured with Tailwind CSS:
+### Tecnologias
 
-```bash
-npx create-next-app --tailwind with-tailwindcss-app
-```
+* **Next.js 14:** Framework React para desenvolvimento web rápido e SEO amigável.
+* **Tailwind CSS:** Framework CSS utilitário para estilos rápidos e personalizáveis.
+* **Outras tecnologias:**  (Liste outras tecnologias que você usou, como bibliotecas de animação, ferramentas de CMS, etc.)
 
-```bash
-yarn create next-app --tailwind with-tailwindcss-app
-```
+### Funcionalidades
 
-```bash
-pnpm create next-app --tailwind with-tailwindcss-app
+* **Design responsivo:**  O portfólio se adapta perfeitamente a qualquer dispositivo.
+* **Seções:** (Liste as seções do seu portfólio, como Sobre Mim, Projetos, Habilidades, Contato, etc.)
+* **(Adicione outras funcionalidades)**
+
+### Clonar e Usar
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/seu-portfolio.git
+   ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   cd seu-portfolio
+   npm install
+   ```
+
+3. **Crie um arquivo `.env.local` na raiz do projeto e adicione suas variáveis de ambiente:**
+
+   ```
+   # Exemplo de variáveis de ambiente
+   NEXT_PUBLIC_API_KEY=sua_chave_de_api
+   ```
+
+4. **Inicie o servidor de desenvolvimento:**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Acesse o portfólio em `http://localhost:3000`**
+
+### Personalização
+
+* **Conteúdo:**  Atualize o conteúdo do portfólio com suas informações, projetos e habilidades nos arquivos correspondentes.
+* **Estilos:** Personalize os estilos usando as classes utilitárias do Tailwind CSS ou crie seus próprios estilos CSS.
+* **Funcionalidades:**  Adicione ou modifique funcionalidades do portfólio de acordo com suas necessidades.
+
+### Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+### Licença
+
+Este projeto está licenciado sob a licença [MIT](LICENSE).
 ```
