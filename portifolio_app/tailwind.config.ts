@@ -15,6 +15,7 @@ const config: Config = {
       "gray-700": "#68686C",
       "gray-800": "#5C626A",
       "blue-500": "#4A91D3",
+      "blue-600":"#417ED9",
       "white": "#ffff"
     },
     fontFamily: {

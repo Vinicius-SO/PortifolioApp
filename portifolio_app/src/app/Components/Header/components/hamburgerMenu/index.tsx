@@ -25,7 +25,7 @@ export function HamburgerMenu(){
     <AnimatePresence>
       {isOpen && (
         <motion.div
-         className="fixed h-full left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-200 border-b border-b-white/20"
+         className="fixed h-full left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 z-10 bg-gray-200 border-b border-b-white/20"
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          exit={{ opacity: 0 }}
