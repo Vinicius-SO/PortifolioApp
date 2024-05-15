@@ -1,4 +1,4 @@
-```markdown
+
 ## Meu Portfólio
 
 Este é o meu portfólio pessoal, construído com Next.js 14 e Tailwind CSS. Aqui, apresento meus projetos, habilidades e experiências.
@@ -60,4 +60,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 ### Licença
 
 Este projeto está licenciado sob a licença [MIT](LICENSE).
-```
+
