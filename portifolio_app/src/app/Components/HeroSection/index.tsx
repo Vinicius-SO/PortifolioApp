@@ -7,7 +7,7 @@ export function HeroSection(){
        <main className="w-[80%] mx-auto text-xl text-gray-600">
           <section className="my-10">
             <span className="block text-xl">Oi, meu nome é</span>
-            <span className={`${montserrat_Subrayada.variable} font-subrayada text-3xl tracking-tighter text-blue-500`}>Vinicius Soares</span>
+            <span className={`${montserrat_Subrayada.variable} font-subrayada text-3xl tracking-tighter text-blue-600`}>Vinicius Soares</span>
           </section>
           <span className="text-2xl text-gray-800 w-80 font-medium">
             Sou um desenvolvedor fullstack, aficionado por programação e tecnologia.
@@ -20,7 +20,7 @@ export function HeroSection(){
               alt="Ilustração"
             />
           </div>
-          <section className="flex justify-between my-16 w-full ">
+          <section className="w-80 flex justify-between my-16">
             <button className="bg-blue-600 w-44 h-12 rounded-md shadow-lg hover:shadow-none">
               <Link
                 className="text-white font-semibold w-full h-full"
@@ -52,7 +52,7 @@ export function HeroSection(){
               />
             </Link>
           </section>
-          <div className="w-full flex justify-center items-center mb-16 animate-bounce opacity-50 z-0">
+          <div className="w-full flex justify-center items-center animate-bounce opacity-50 z-10">
             <Image
                 src="/ArrowDown.svg"
                 width={42}

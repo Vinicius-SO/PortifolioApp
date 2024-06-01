@@ -15,7 +15,7 @@ export function HamburgerMenu(){
 
   useClickAway(ref, () => setOpen(false));
 
-  const routes = [{title: "home", path: '/'},{title: "Projects", path: '/'},{title: "Contato", path: '/'}]
+  const routes = [{title: "home", path: '/'},{title: "Projects", path: 'projetos'},{title: "Contato", path: ''}]
 
 
   
