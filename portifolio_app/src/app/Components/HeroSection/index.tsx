@@ -14,7 +14,7 @@ export function HeroSection(){
           </span>
           <div className="flex justify-center mt-10">
             <Image
-              src="/Ilustra.png"
+              src="/Ilustra.svg"
               width={181}
               height={191}
               alt="Ilustração"
@@ -52,14 +52,14 @@ export function HeroSection(){
               />
             </Link>
           </section>
-          <div className="w-full flex justify-center items-center animate-bounce opacity-50 z-10">
+          {/* <div className="w-full flex justify-center items-center opacity-15 z-10">
             <Image
                 src="/ArrowDown.svg"
                 width={42}
                 height={42}
                 alt="Logo"
               />
-          </div>
+          </div> */}
        </main>
    )
 }

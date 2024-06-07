@@ -1,6 +1,7 @@
+import { AboutMe } from "./Components/AboutMe";
 import { Header } from "./Components/Header";
 import { HeroSection } from "./Components/HeroSection";
-import Projects from "./Projects/page";
+import Projects from "./Components/Projects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header/>
       <HeroSection/>
       <Projects/>
+      <AboutMe/>
     </main>
   );
 }

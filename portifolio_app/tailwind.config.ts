@@ -56,14 +56,17 @@ const config = {
     colors:{
       ...colors,
       "gray-200": "#F8F8F8",
+      "gray-400": "#C8C8C8",
       "gray-600": '#69717E',
       "gray-700": "#68686C",
       "gray-800": "#5C626A",
       "blue-300": "#89C6FF",
+      "blue-400": "#4190D9",
       "blue-500": "#4A91D3",
       "blue-600":"#417ED9",
       "white": "#ffff",
-      "black": "#0000"
+      "black": "#0000",
+      
     },
     fontFamily: {
       subrayada: ['var(--font-montserrat-subrayada)'],
@@ -74,6 +77,8 @@ const config = {
       "xl": "1.25rem",
       "2xl": '1.5rem',  
       "3xl": '2rem',
+      "5xl": '3rem',
+      "8xl": '6rem'
     }
   },
   plugins: [require("tailwindcss-animate"), Myclass],

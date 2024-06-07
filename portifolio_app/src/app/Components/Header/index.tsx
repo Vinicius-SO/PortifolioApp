@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { HamburgerMenu } from './components/hamburgerMenu'
+import { ContactButton } from './components/ContactButton'
 
 export function Header(){
 
@@ -15,6 +16,11 @@ export function Header(){
             />
 
             <HamburgerMenu/>
+            <div className='captalize lg:flex text-gray-600 text-2xl gap-7 hidden'>
+              <button className='text-blue-500'>Home</button>
+              <button>Project</button>
+              <ContactButton/>
+            </div>
           </div>
         </header>
        </>

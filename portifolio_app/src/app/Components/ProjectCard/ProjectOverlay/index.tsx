@@ -20,7 +20,7 @@ export function ProjectOverlay({title, description}: ProjectOverlayProps){
           imageURL="./page.svg"
         />
         <CardButton
-          name="Click"
+          name="Online"
           imageURL="./click.svg"
         />
       </div>
