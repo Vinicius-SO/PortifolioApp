@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{scrollBehavior:'smooth'}}>
       <body className={`${montserrat.className} overflow-x-hidden`}>{children}</body>
     </html>
   );

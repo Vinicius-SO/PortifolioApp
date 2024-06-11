@@ -9,7 +9,7 @@ export default function Projects(require:any) {
   return (
     
     <div className="w-full bg-gray-200 pt-10">
-      <div className="w-[80%] mx-auto mb-20">
+      <div id="Projects" className="w-[80%] mx-auto mb-20">
         <SectionTitle icon="Project.svg" title="Projects"/>
       </div>
 
