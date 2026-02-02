@@ -5,10 +5,10 @@ import Projects from "./Components/Projects";
 
 export default function Home() {
   return (
-    <main className="w-[100vw] h-[100vh] mr-5 scroll-smooth ">
+    <main className="min-h-screen scroll-smooth overflow-x-hidden">
       <Header/> 
       <HeroSection/>
-      <Projects/>
+      <Projects/>   
       <AboutMe/>
     </main>
   );

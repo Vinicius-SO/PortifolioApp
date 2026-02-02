@@ -1,26 +1,70 @@
-
 import { ProjectOverlay } from "./ProjectOverlay"
 
 interface ProjectCardProps {
-  id:string
   title: string
   description: string
   img: string
-  projectLink: string
 }
 
-const title:string = "Todo App"
-const description: string = "Este é um app de organização das suas tarefas diarias por meio de uma lista da afazeres."
-
-export function ProjectCard(){
-  return(
-      <div className="group perspective transition-all duration-500 w-64">
-        <div className="relative w-64 h-80 flex items-end rounded-2xl bg-cover bg-center preserve-3d group-hover:my-rotate-y-180 duration-1000 group-hover:bg-transparent" style={{ backgroundImage: `url('/rocketTodo.png')`}}>
-          <div className="absolute backface-hidden  w-full h-20 z-10 flex items-center px-6 rounded-2xl bg-gradient-to-t from-black/80 via-black/30 to-black/0 font-semibold text-2xl text-white ">
+export function ProjectCard({
+  title,
+  description,
+  img,
+}: ProjectCardProps) {
+  return (
+    <div className="group w-64 h-80 perspective">
+      <div
+        className="
+          relative
+          w-full
+          h-full
+          preserve-3d
+          transition-transform
+          duration-700
+          ease-out
+          group-hover:my-rotate-y-180
+        "
+      >
+        {/* FRONT */}
+        <div
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+            backface-hidden
+            rounded-2xl
+            bg-cover
+            bg-center
+          "
+          style={{ backgroundImage: `url('${img}')` }}
+        >
+          <div
+            className="
+              absolute
+              bottom-0
+              w-full
+              h-20
+              flex
+              items-center
+              px-6
+              rounded-b-2xl
+              bg-gradient-to-t
+              from-black/80
+              via-black/40
+              to-black/0
+              font-semibold
+              text-2xl
+              text-white
+            "
+          >
             {title}
           </div>
-        <ProjectOverlay title={title} description={description} />
         </div>
+
+        {/* BACK */}
+        <ProjectOverlay title={title} description={description} />
       </div>
-   )
+    </div>
+  )
 }

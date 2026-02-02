@@ -2,64 +2,53 @@ import Image from "next/image"
 import { montserrat_Subrayada } from "@/app/layout"
 import Link from "next/link"
 
-export function HeroSection(){
-  return(
-       <main className="w-[80%] mx-auto text-xl text-gray-600">
-          <section className="my-10">
-            <span className="block text-xl">Oi, meu nome é</span>
-            <span className={`${montserrat_Subrayada.variable} font-subrayada text-3xl tracking-tighter text-blue-600`}>Vinicius Soares</span>
-          </section>
-          <span className="text-2xl text-gray-800 w-80 font-medium">
+export function HeroSection() {
+  return (
+    <section className="w-full px-4 md:px-0 md:w-[80%] mx-auto text-gray-600">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center my-12">
+
+        {/* TEXTO */}
+        <div>
+          <span className="block text-lg">Oi, meu nome é</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-blue-600">
+            VINICIUS SOARES
+          </h1>
+
+          <p className="mt-6 text-lg text-gray-800">
             Sou um desenvolvedor fullstack, aficionado por programação e tecnologia.
-          </span>
-          <div className="flex justify-center mt-10">
-            <Image
-              src="/Ilustra.svg"
-              width={181}
-              height={191}
-              alt="Ilustração"
-            />
+          </p>
+
+          {/* BOTÕES */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href="https://drive.google.com/..."
+              className="bg-blue-600 px-6 py-3 rounded-md text-white font-semibold shadow-lg"
+            >
+              Ver currículo
+            </a>
+
+            <Link href="https://github.com/Vinicius-SO">
+              <Image src="/github.svg" width={40} height={40} alt="GitHub" />
+            </Link>
+
+            <Link href="https://linkedin.com/in/...">
+              <Image src="/linkedin.svg" width={40} height={40} alt="LinkedIn" />
+            </Link>
           </div>
-          <section className="w-80 flex justify-between my-16">
-            <button className="bg-blue-600 w-44 h-12 rounded-md shadow-lg hover:shadow-none">
-              <Link
-                className="text-white font-semibold w-full h-full"
-                href="https://drive.google.com/file/d/13xssZ71gFjfoBxLVtDsfZm1xFVuoaPKA/view"
-              >
-                Ver curriculo
-              </Link>
-            </button>
-            <Link
-             href="https://github.com/Vinicius-SO"
-             className="size-12 shadow-lg hover:shadow-none"
-            >
-              <Image
-                src="/github.svg"
-                width={181}
-                height={191}
-                alt="Logo"
-              />
-            </Link>
-            <Link
-             className="size-12 shadow-lg hover:shadow-none"
-             href="https://www.linkedin.com/in/viniciuss-so/"
-            >
-              <Image
-                src="/linkedin.svg"
-                width={181}
-                height={191}
-                alt="Logo"
-              />
-            </Link>
-          </section>
-          {/* <div className="w-full flex justify-center items-center opacity-15 z-10">
-            <Image
-                src="/ArrowDown.svg"
-                width={42}
-                height={42}
-                alt="Logo"
-              />
-          </div> */}
-       </main>
-   )
+        </div>
+
+        {/* IMAGEM */}
+        <div className="flex justify-center">
+          <Image
+            src="/Ilustra.svg"
+            width={260}
+            height={260}
+            alt="Ilustração"
+            className="max-w-full h-auto"
+          />
+        </div>
+
+      </div>
+    </section>
+  )
 }

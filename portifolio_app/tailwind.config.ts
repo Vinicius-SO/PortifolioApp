@@ -1,8 +1,8 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 const plugin = require("tailwindcss/plugin");
-const { colors } = require('tailwindcss/defaultTheme')
+const { colors } = require("tailwindcss/defaultTheme");
 
-const Myclass = plugin(function ({ addUtilities }:any) {
+const Myclass = plugin(function ({ addUtilities }: any) {
   addUtilities({
     ".my-rotate-y-180": {
       transform: "rotateY(180deg)",
@@ -19,19 +19,16 @@ const Myclass = plugin(function ({ addUtilities }:any) {
   });
 });
 
-
 const config = {
   darkMode: ["class"],
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
- 
+    "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
     // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-
-
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
   theme: {
@@ -44,6 +41,17 @@ const config = {
     },
     extend: {
       keyframes: {
+        glow: {
+          "0%": {
+            boxShadow: "0 0 6px rgba(59,130,246,0.35)",
+          },
+          "40%": {
+            boxShadow: "0 0 28px rgba(59,130,246,0.9)",
+          },
+          "100%": {
+            boxShadow: "0 0 6px rgba(59,130,246,0.35)",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -56,37 +64,37 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        glow: "glow 2.5s ease-in-out both",
       },
     },
-    colors:{
+    colors: {
       ...colors,
       "gray-200": "#F8F8F8",
       "gray-400": "#C8C8C8",
-      "gray-600": '#69717E',
+      "gray-600": "#69717E",
       "gray-700": "#68686C",
       "gray-800": "#5C626A",
       "blue-300": "#89C6FF",
       "blue-400": "#4190D9",
       "blue-500": "#4A91D3",
-      "blue-600":"#417ED9",
-      "white": "#ffff",
-      "black": "#0000",
-      
+      "blue-600": "#417ED9",
+      white: "#ffff",
+      black: "#0000",
     },
     fontFamily: {
-      subrayada: ['var(--font-montserrat-subrayada)'],
-      serif:['var(--font-Serif)'],
-      electrolize:['var(--font-electrolize)']
+      subrayada: ["var(--font-montserrat-subrayada)"],
+      serif: ["var(--font-Serif)"],
+      electrolize: ["var(--font-electrolize)"],
     },
-    fontSize:{
-      "xl": "1.25rem",
-      "2xl": '1.5rem',  
-      "3xl": '2rem',
-      "5xl": '3rem',
-      "8xl": '6rem'
-    }
+    fontSize: {
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "2rem",
+      "5xl": "3rem",
+      "8xl": "6rem",
+    },
   },
   plugins: [require("tailwindcss-animate"), Myclass],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
