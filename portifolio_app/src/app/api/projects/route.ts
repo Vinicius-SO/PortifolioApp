@@ -1,6 +1,34 @@
-// app/api/projects/route.ts
 import { supabaseServer } from "@/lib/supabaseServer";
 import { NextResponse } from "next/server";
+
+export async function GET() {
+  try {
+    const { data, error } = await supabaseServer
+      .from("projects")
+      .select(
+        `
+        id,
+        title,
+        description,
+        techs,
+        image_url,
+        created_at
+      `,
+      )
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    return NextResponse.json(data, { status: 200 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Erro ao buscar projetos" },
+      { status: 500 },
+    );
+  }
+}
 
 export async function POST(req: Request) {
   try {
@@ -18,7 +46,7 @@ export async function POST(req: Request) {
     const fileName = `${Date.now()}-${image.name}`;
 
     const { error: uploadError } = await supabaseServer.storage
-      .from("projects")
+      .from("Portifolio images")
       .upload(fileName, image, {
         contentType: image.type,
       });
@@ -28,7 +56,7 @@ export async function POST(req: Request) {
     }
 
     const { data: publicUrl } = supabaseServer.storage
-      .from("projects")
+      .from("Portifolio images")
       .getPublicUrl(fileName);
 
     const { data, error } = await supabaseServer
