@@ -1,26 +1,11 @@
-import { supabaseServer } from "@/lib/supabaseServer";
+import { ProjectService } from "@/modules/projects/services/projectService";
 import { NextResponse } from "next/server";
+
+const projectService = new ProjectService();
 
 export async function GET() {
   try {
-    const { data, error } = await supabaseServer
-      .from("projects")
-      .select(
-        `
-        id,
-        title,
-        description,
-        techs,
-        image_url,
-        created_at
-      `,
-      )
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      throw error;
-    }
-
+    const data = await projectService.getAllProjects();
     return NextResponse.json(data, { status: 200 });
   } catch (err) {
     return NextResponse.json(
@@ -33,49 +18,13 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
+    const project = await projectService.createProject(formData);
 
-    const title = formData.get("title") as string;
-    const description = formData.get("description") as string;
-    const techs = JSON.parse(formData.get("techs") as string);
-    const image = formData.get("image") as File;
-
-    if (!image || !image.type.startsWith("image/")) {
+    return NextResponse.json(project, { status: 201 });
+  } catch (err: any) {
+    if (err.message === "INVALID_IMAGE") {
       return NextResponse.json({ error: "Arquivo inválido" }, { status: 400 });
     }
-
-    const fileName = `${Date.now()}-${image.name}`;
-
-    const { error: uploadError } = await supabaseServer.storage
-      .from("Portifolio images")
-      .upload(fileName, image, {
-        contentType: image.type,
-      });
-
-    if (uploadError) {
-      throw uploadError;
-    }
-
-    const { data: publicUrl } = supabaseServer.storage
-      .from("Portifolio images")
-      .getPublicUrl(fileName);
-
-    const { data, error } = await supabaseServer
-      .from("projects")
-      .insert([
-        {
-          title,
-          description,
-          techs,
-          image_url: publicUrl.publicUrl,
-        },
-      ])
-      .select()
-      .single();
-
-    if (error) throw error;
-
-    return NextResponse.json(data, { status: 201 });
-  } catch (err) {
     return NextResponse.json(
       { error: "Erro ao criar projeto" },
       { status: 500 },
