@@ -7,7 +7,7 @@ interface CardButtonProps {
 
 export function CardButton({name,imageURL}:CardButtonProps){
   return( 
-    <div className="w-24 h-9 bg-blue-500 rounded-md flex justify-center align-center hover:bg-blue-600">
+    <div className="w-full h-9 bg-blue-500 rounded-md flex justify-center align-center hover:bg-blue-600">
       <button className="flex items-center justify-center">
         <Image
           src={imageURL}

@@ -1,12 +1,14 @@
 import { ProjectOverlay } from "./ProjectOverlay"
 
 interface ProjectCardProps {
+  id: string 
   title: string
   description: string
   img: string
 }
 
 export function ProjectCard({
+  id,
   title,
   description,
   img,
@@ -63,7 +65,7 @@ export function ProjectCard({
         </div>
 
         {/* BACK */}
-        <ProjectOverlay title={title} description={description} />
+        <ProjectOverlay title={title} description={description} id={id} />
       </div>
     </div>
   )

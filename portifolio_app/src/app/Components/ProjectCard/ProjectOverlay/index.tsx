@@ -1,11 +1,13 @@
+import Link from "next/link"
 import { CardButton } from "../CardButton"
 
 interface ProjectOverlayProps {
+  id: string
   title: string
   description: string
 }
 
-export function ProjectOverlay({ title, description }: ProjectOverlayProps) {
+export function ProjectOverlay({ id, title, description }: ProjectOverlayProps) {
   return (
     <div
       className="
@@ -27,17 +29,22 @@ export function ProjectOverlay({ title, description }: ProjectOverlayProps) {
         ease-[cubic-bezier(.4,0,.2,1)]
       "
     >
-      <h2 className="text-xl font-semibold text-white tracking-tight mb-2">
-        {title}
-      </h2>
+      <div>
+        <h2 className="text-xl font-bold text-white tracking-tight mb-2">
+          {title}
+        </h2>
 
-      <p className="text-xs text-gray-300 leading-relaxed mb-4 text-white">
-        {description}
-      </p>
+        <p className="text-sm text-gray-300 text-white leading-relaxed mb-4 line-clamp-6">
+          {description}
+        </p>
+      </div>
 
-      <div className="flex gap-3">
-        <CardButton name="Demo" imageURL="/click.svg" />
-        <CardButton name="Código" imageURL="/github.svg" />
+      {/* 👇 Correção no container do botão */}
+      <div className="flex mt-auto w-full">
+        {/* Adicionado flex e justify-center para centralizar o CardButton */}
+        <Link href={`/project/${id}`} className="w-full flex justify-center">
+          <CardButton name="Ver Detalhes" imageURL="/click.svg" />
+        </Link>
       </div>
     </div>
   )

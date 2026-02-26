@@ -3,30 +3,31 @@ import { NextResponse } from "next/server";
 
 const projectService = new ProjectService();
 
-export async function GET() {
+// O Next.js passa os parâmetros da URL no segundo argumento
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } },
+) {
   try {
-    const data = await projectService.getAllProjects();
-    return NextResponse.json(data, { status: 200 });
-  } catch (err) {
-    return NextResponse.json(
-      { error: "Erro ao buscar projetos" },
-      { status: 500 },
-    );
-  }
-}
+    // Pegamos o ID diretamente dos parâmetros da rota
+    const id = params.id;
 
-export async function POST(req: Request) {
-  try {
-    const formData = await req.formData();
-    const project = await projectService.createProject(formData);
+    const project = await projectService.getProjectById(id);
 
-    return NextResponse.json(project, { status: 201 });
-  } catch (err: any) {
-    if (err.message === "INVALID_IMAGE") {
-      return NextResponse.json({ error: "Arquivo inválido" }, { status: 400 });
+    // Se o serviço retornar null, o projeto não existe no Supabase
+    if (!project) {
+      return NextResponse.json(
+        { error: "Projeto não encontrado" },
+        { status: 404 },
+      );
     }
+
+    return NextResponse.json(project, { status: 200 });
+  } catch (err) {
+    console.error("ERRO AO BUSCAR PROJETO POR ID NA API:", err);
+
     return NextResponse.json(
-      { error: "Erro ao criar projeto" },
+      { error: "Erro interno ao buscar o projeto" },
       { status: 500 },
     );
   }
