@@ -99,7 +99,6 @@ export default async function ProjectDetails({ params }: ProjectPageProps) {
               className="object-contain max-h-full drop-shadow-2xl"
             />
           </div>
-
         </section>
       </div>
     </main>
