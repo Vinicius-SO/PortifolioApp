@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { montserrat_Subrayada } from "@/app/layout"
 import Link from "next/link"
 
 export function HeroSection() {
@@ -8,7 +7,6 @@ export function HeroSection() {
       <div className="w-full px-4 md:px-0 md:w-[80%] mx-auto z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center my-12">
 
-          {/* TEXTO */}
           <div className="flex flex-col items-start">
             
             <div className="flex flex-wrap items-baseline gap-2 mb-2">
@@ -40,11 +38,9 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* ❗️ A seta foi REMOVIDA daqui ❗️ */}
 
           </div>
 
-          {/* IMAGEM MANTIDA */}
           <div className="flex justify-center">
             <Image
               src="/Ilustra.svg"
