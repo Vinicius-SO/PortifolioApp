@@ -17,7 +17,7 @@ export class ProjectService {
     const description = formData.get("description") as string;
 
     // 👇 1. Adicionamos a captura do novo campo content
-    const content = formData.get("content") as string;
+    const Content = formData.get("content") as string;
 
     const techs = JSON.parse(formData.get("techs") as string);
     const live_url = formData.get("live_url") as string;
@@ -39,7 +39,7 @@ export class ProjectService {
     return await repo.create({
       title,
       description,
-      content, 
+      Content, // 👈 Passamos o content para o repositório
       techs,
       image_url: imageUrl,
       live_url,

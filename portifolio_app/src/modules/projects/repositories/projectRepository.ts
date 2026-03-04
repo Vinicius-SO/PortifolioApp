@@ -4,7 +4,7 @@ export class ProjectsRepository {
   async create(projectData: {
     title: string;
     description: string;
-    content: string;
+    Content: string;
     techs: string[];
     image_url: string;
     repo_url: string;
@@ -19,26 +19,31 @@ export class ProjectsRepository {
     if (error) throw error;
     return data;
   }
-  // Adicione isso no seu ProjectsRepository
+
+  // No seu ProjectsRepository.ts
   async findById(id: string) {
     try {
-      const { data, error } = await supabaseServer // Use a sua instância local do supabase
+      const { data, error } = await supabaseServer
         .from("projects")
-        .select("*")
+        // Liste explicitamente. Se o banco chama "Content", use "Content".
+        // Se chama "content", use "content".
+        .select(
+          "id, title, description, Content, techs, image_url, repo_url, live_url, created_at",
+        )
         .eq("id", id)
         .single();
 
       if (error) {
-        console.error("Erro ao buscar projeto por ID:", error.message);
+        console.error("Erro ao buscar:", error.message);
         return null;
       }
 
       return data;
     } catch (err) {
-      console.error("Erro inesperado no repositório:", err);
       return null;
     }
   }
+
   async findAll() {
     const { data, error } = await supabaseServer
       .from("projects")
@@ -48,6 +53,7 @@ export class ProjectsRepository {
         title,
         description,
         techs,
+        Content,
         image_url,
         created_at
       `,

@@ -10,6 +10,7 @@ interface ProjectPageProps {
 export default async function ProjectDetails({ params }: ProjectPageProps) {
   const projectService = new ProjectService();
   const project = await projectService.getProjectById(params.id);
+  console.log("Projeto encontrado:", project); // Log para verificar o conteúdo do projeto
 
   if (!project) {
     notFound();
@@ -17,7 +18,7 @@ export default async function ProjectDetails({ params }: ProjectPageProps) {
 
   // 👇 LÓGICA DE DIVISÃO DO TEXTO 👇
   // Garante que existe um texto para não dar erro
-  const contentText = project.content || ""; 
+  const contentText = project.Content || ""; 
   
   // Divide o texto onde houver quebra de linha (\n) e remove espaços vazios
   const paragraphs = contentText.split('\n').filter((p: string) => p.trim() !== '');
@@ -76,8 +77,8 @@ export default async function ProjectDetails({ params }: ProjectPageProps) {
             {/* BOTÕES */}
             <div className="flex flex-wrap gap-4 mt-6">
               {project.repo_url && (
-                <a href={project.repo_url} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#4285F4] hover:bg-blue-600 text-white px-6 py-2 rounded-md font-medium transition-colors shadow-md">
-                  <Image src="/github-white.svg" alt="GitHub" width={20} height={20} />
+                <a href={project.repo_url} target="_blank" rel="noreferrer" className="flex items-center gap-2 border-2 border-[#4285F4] hover:border-[#104887] text-[#4285F4] px-6 py-2 rounded-md font-medium transition-colors shadow-md">
+                  <Image src="/github.svg" alt="GitHub" width={20} height={20} />
                   Github
                 </a>
               )}
