@@ -40,12 +40,12 @@ export function Form(){
         <div className="flex justify-start gap-16 mb-10">
           <div className="flex flex-col gap-2">
             <Label htmlFor="name" className="text-gray-800">Seu nome</Label>
-            <input id="name" type="text" placeholder="Vitor loren" {...register('name')} className=" border-b-2 border-gray-400 focus:rounded-md shadow-none p-2 outline-blue-300"/>
+            <input id="name" type="text" placeholder="Vinicius Soares" {...register('name')} className=" border-b-2 border-gray-400 focus:rounded-md shadow-none p-2 outline-blue-300"/>
             {errors.name?.message && <p className='text-[#E22346]'>{errors.name?.message.toString()}</p>}
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="email" className="text-gray-800">Seu email</Label>
-            <input id="email" type="email" placeholder="johnDoe@gmail.com" {...register('email')} className=" border-b-2 border-gray-400 focus:rounded-md shadow-none p-2 outline-blue-300"/>
+            <input id="email" type="email" placeholder="vini@email.com" {...register('email')} className=" border-b-2 border-gray-400 focus:rounded-md shadow-none p-2 outline-blue-300"/>
             {errors.email?.message && <p className='text-[#E22346]'>{errors.email?.message.toString()}</p>}
           </div>
         </div>

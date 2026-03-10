@@ -21,13 +21,13 @@ export const techs: Tech[] = [
   },
   {
     name: "TypeScript",
-    icon: "/techs/ts.svg",
+    icon: "/techs/typescript.svg",
     category: "Frontend",
     level: "core",
   },
   {
     name: "JavaScript",
-    icon: "/techs/js.svg",
+    icon: "/techs/javascript.svg",
     category: "Frontend",
     level: "core",
   },

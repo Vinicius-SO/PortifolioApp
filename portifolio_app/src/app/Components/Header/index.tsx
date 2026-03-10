@@ -9,16 +9,16 @@ export function Header(){
        <>
         <header className="bg-[#104887] bg-fixed h-14 shadow-md shadow-slate-500">
           <div className='w-[80%] h-[100%] flex flex-row items-center justify-between  mx-auto' >
-            <Image
-              src="/Logo.svg"
-              width={32}
-              height={32}
-              alt="Logo"
-            />
+            <Link
+              href={'/'}
+              >
+              <Image src="/logo.svg" alt="Logo" width={32} height={32}/>
+            </Link>
+              
 
             <HamburgerMenu/>
             <div className='captalize lg:flex text-gray-200 text-2xl gap-7 hidden'>
-              <Link href={'/'} className='text-blue-300'>Home</Link>
+              <Link href={'/'} /*className='text-blue-300'*/>Home</Link>
               <Link href={'/#Projects'} >Projects</Link>
               <ContactButton/>
             </div>

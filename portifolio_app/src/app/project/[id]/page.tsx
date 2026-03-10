@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectService } from "@/modules/projects/services/projectService";
+import { Header } from "@/app/Components/Header";
 
 interface ProjectPageProps {
   params: { id: string };
@@ -31,6 +32,7 @@ export default async function ProjectDetails({ params }: ProjectPageProps) {
 
   return (
     <main className="min-h-screen bg-white font-sans text-gray-800">
+      <Header/>
       <div className="w-full px-4 md:px-0 md:w-[80%] mx-auto pt-12 pb-20">
         
         {/* ================= 1ª LINHA (Topo) ================= */}
