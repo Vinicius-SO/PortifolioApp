@@ -23,7 +23,8 @@ export function HeroSection() {
             {/* BOTÕES */}
             <div className="flex flex-wrap items-center gap-4 mt-8">
               <a
-                href="https://drive.google.com/..."
+                href={process.env.CV_URL!}
+                target="_blank"
                 className="bg-[#4285F4] hover:bg-blue-600 px-6 py-3 rounded-md text-white font-medium shadow-md transition-colors"
               >
                 Ver currículo

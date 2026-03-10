@@ -1,3 +1,4 @@
+export const revalidate = 60; // Revalida a cada 60 segundos
 import { AboutMe } from "./Components/AboutMe";
 import { Header } from "./Components/Header";
 import { HeroSection } from "./Components/HeroSection";

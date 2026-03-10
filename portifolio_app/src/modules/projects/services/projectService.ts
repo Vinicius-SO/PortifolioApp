@@ -17,7 +17,7 @@ export class ProjectService {
     const description = formData.get("description") as string;
 
     // 👇 1. Adicionamos a captura do novo campo content
-    const Content = formData.get("content") as string;
+    const Content = formData.get("Content") as string;
 
     const techs = JSON.parse(formData.get("techs") as string);
     const live_url = formData.get("live_url") as string;

@@ -12,7 +12,7 @@ export function TechGrid() {
         grid
         grid-cols-4 sm:grid-cols-6 md:grid-cols-8
         gap-6
-        mt-10
+        pt-10
       "
     >
       {techs.map((tech, index) => (

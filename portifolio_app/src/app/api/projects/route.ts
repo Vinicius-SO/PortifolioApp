@@ -32,3 +32,19 @@ export async function GET(
     );
   }
 }
+
+export async function POST(req: Request) {
+  try {
+    const formData = await req.formData();
+
+    const createdProject = await projectService.createProject(formData);
+
+    return NextResponse.json(createdProject, { status: 201 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Erro ao criar projeto" },
+
+      { status: 500 },
+    );
+  }
+}
